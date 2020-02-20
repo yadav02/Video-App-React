@@ -1,36 +1,32 @@
 import React from 'react';
-import VideoCard from './videoCard';
-import Axios from 'axios';
+import TopBar from './TopBar'
+import {Route,BrowserRouter} from 'react-router-dom';
 import './App.css';
+import HomePage from './HomePage';
+import About from './About';
+import Contact from './Contact';
+import Login from './Login';
+
 
 
 class App extends React.Component{
  
-    state ={
-      videoList:[]
-    }
-
-  componentDidMount() {
-    Axios.get('http://5d76bf96515d1a0014085cf9.mockapi.io/playlist')
-      .then(res => {
-          console.log(res);
-          this.setState ({videoList: [...res.data]})
-       })
-      .catch ((err)=>{
-            console.log(err);
-            
-      })
-  }    
-
+    
 render(){
-  const videoCards = this.state.videoList.map(item =>{
-    return <VideoCard title = {item.title} thumbnail = {item.thumbnail} />
-  } )
+  
   return (
-    <div className="CardGrid">
-     {videoCards}
-    </div>
-  ); 
+       <BrowserRouter>
+        <div>
+           <TopBar/>
+          <switch>
+            <Route path ="/homepage" component={HomePage} />
+            <Route path ="/about" component={About} /> 
+            <Route path ="/contact" component={Contact} />
+            <Route path ="/login" component={Login} />
+          </switch>
+         </div>
+       </BrowserRouter>
+     ); 
   }
 }
 

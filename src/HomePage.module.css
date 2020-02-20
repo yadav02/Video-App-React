@@ -1,0 +1,21 @@
+.CardGrid {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 50px;
+    top: 80px;
+    
+  }
+  
+  .VideoCard {
+    width: 25%;
+    padding: 16px;
+    margin: 30px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px #ccc;
+   
+  }
+  
+  .VideoCard > img {
+    width: 100%;
+  }
