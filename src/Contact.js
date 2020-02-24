@@ -6,7 +6,7 @@ class contect extends React.Component {
     render(){
 
         return(
-            <div className={classes.aboutWrap}>
+            <div className={classes.contactWrap}>
                 <br />
                 <br />
                 <br />
